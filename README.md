@@ -1,10 +1,10 @@
-# H? TH?NG QU?N L› NH¬N S? T?P TRUNG (HRM)
+# H·ªÜ TH·ªêNG QU·∫¢N L√ù NH√ÇN S·ª∞ T·∫¨P TRUNG (HRM)
 
-- **H? v‡ tÍn:** Nguy?n Qu?c Vuong
+- **H·ªç v√† t√™n:** Nguyen Quoc Vuong
 - **MSSV:** 238009
-- **L?p:** –i?n to·n d·m m‚y
+- **L·ªõp:** √êi·ªán to√°n d√°m m√¢y
 
-## –u?ng link t‡i nguyÍn b‡i thi
+## √ê∆∞·ªùng link t√†i nguy√™n b√†i thi
 - **GitHub Repository:** https://github.com/238009-NguyenQuocVuong/238009_NguyenQuocVuong
 - **Docker Hub Backend:** https://hub.docker.com/r/238009nguyenquocvuong/backend
 - **Docker Hub Frontend:** https://hub.docker.com/r/238009nguyenquocvuong/frontend
