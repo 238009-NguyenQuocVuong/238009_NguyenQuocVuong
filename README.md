@@ -1,8 +1,8 @@
-# Ð? ÁN QU?N LÝ NHÂN S? (HRM)
-- Sinh viên: Nguy?n Qu?c Vuong
+# QUẢN LÝ NHÂN SỰ (HRM)
+- Sinh viên: Nguyen Quoc Vuong
 - MSSV: 238009
 
-## B?NG THÔNG TIN N?P BÀI
+## BẢNG THÔNG TIN NỘP BÀI
 1. Link GitHub: https://github.com/238009-NguyenQuocVuong/238009_NguyenQuocVuong
 2. Link Docker Backend: https://hub.docker.com/r/238009nguyenquocvuong/backend
 3. Link Docker Frontend: https://hub.docker.com/r/238009nguyenquocvuong/frontend
