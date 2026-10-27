@@ -100,12 +100,12 @@ function App() {
       <header className="pb-3 mb-4 border-bottom d-flex justify-content-between align-items-center">
         <div>
           <h2 className="text-primary fw-bold">H? TH?NG QU?N LÝ NHÂN S? (HRM)</h2>
-          <p className="text-muted mb-0">Sinh viên: <strong>Nguy?n Qu?c Vuong</strong> | MSSV: <strong>238009</strong></p>
+          <p className="text-muted mb-0">Sinh viên: <strong>Nguyễn Quốc Vương</strong> | MSSV: <strong>238009</strong></p>
         </div>
       </header>
 
       <div className="row g-4">
-        {/* FORM THÊM / S?A */}
+        {/* FORM THÊM / Sửa */}
         <div className="col-lg-4">
           <div className="card shadow-sm">
             <div className="card-header bg-primary text-white fw-bold">
@@ -123,7 +123,7 @@ function App() {
                 </div>
                 <div className="row mb-2">
                   <div className="col">
-                    <label className="form-label">Gi?i tính</label>
+                    <label className="form-label">Giới tính</label>
                     <select className="form-select" name="gender" value={formData.gender} onChange={handleChange}>
                       <option value="Nam">Nam</option>
                       <option value="N?">N?</option>
@@ -135,7 +135,7 @@ function App() {
                   </div>
                 </div>
                 <div className="mb-2">
-                  <label className="form-label">Ch?c v?</label>
+                  <label className="form-label">Chức vụ</label>
                   <input type="text" className="form-control" name="position" value={formData.position} onChange={handleChange} required />
                 </div>
                 <div className="mb-2">
@@ -143,7 +143,7 @@ function App() {
                   <input type="email" className="form-control" name="email" value={formData.email} onChange={handleChange} required />
                 </div>
                 <div className="mb-2">
-                  <label className="form-label">S? di?n tho?i</label>
+                  <label className="form-label">Số điện thoại</label>
                   <input type="text" className="form-control" name="phone" value={formData.phone} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
@@ -182,7 +182,7 @@ function App() {
                   onChange={(e) => setSearch(e.target.value)}
                 />
                 <button type="submit" className="btn btn-outline-primary">Tìm ki?m</button>
-                <button type="button" className="btn btn-outline-secondary" onClick={() => { setSearch(''); fetchEmployees(''); }}>T?i l?i</button>
+                <button type="button" className="btn btn-outline-secondary" onClick={() => { setSearch(''); fetchEmployees(''); }}>Tải lại</button>
               </form>
             </div>
           </div>
@@ -196,7 +196,7 @@ function App() {
                     <th>Mã NV</th>
                     <th>H? Tên</th>
                     <th>Phòng Ban</th>
-                    <th>Ch?c V?</th>
+                    <th>Chức vụ</th>
                     <th>Email</th>
                     <th>Tr?ng Thái</th>
                     <th>Thao Tác</th>
@@ -221,7 +221,7 @@ function App() {
                           </span>
                         </td>
                         <td>
-                          <button className="btn btn-sm btn-outline-warning me-1" onClick={() => handleEdit(emp)}>S?a</button>
+                          <button className="btn btn-sm btn-outline-warning me-1" onClick={() => handleEdit(emp)}>Sửa</button>
                           <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(emp._id)}>Xóa</button>
                         </td>
                       </tr>
