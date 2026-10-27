@@ -17,7 +17,7 @@ function App() {
     email: '',
     phone: '',
     hireDate: '',
-    status: 'Ðang làm vi?c'
+    status: 'Đang làm việc'
   });
   const [editingId, setEditingId] = useState(null);
 
@@ -27,7 +27,7 @@ function App() {
       const res = await axios.get(`${API_BASE_URL}?search=${keyword}`);
       setEmployees(res.data);
     } catch (err) {
-      console.error('L?i l?y danh sách nhân viên:', err);
+      console.error('Lỗi lấy danh sách nhân viên:', err);
     } finally {
       setLoading(false);
     }
@@ -51,15 +51,15 @@ function App() {
     try {
       if (editingId) {
         await axios.put(`${API_BASE_URL}/${editingId}`, formData);
-        alert('C?p nh?t thành công!');
+        alert('Cập nhật thành công!');
       } else {
         await axios.post(API_BASE_URL, formData);
-        alert('Thêm m?i thành công!');
+        alert('Thêm mới thành công!');
       }
       resetForm();
       fetchEmployees(search);
     } catch (err) {
-      alert(err.response?.data?.message || 'Có l?i x?y ra');
+      alert(err.response?.data?.message || 'Có lỗi xảy ra');
     }
   };
 
@@ -69,12 +69,12 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    if (window.confirm('B?n có ch?c ch?n mu?n xóa nhân viên này?')) {
+    if (window.confirm('Bạn có chắc chắn muốn xóa nhân viên này?')) {
       try {
         await axios.delete(`${API_BASE_URL}/${id}`);
         fetchEmployees(search);
       } catch (err) {
-        alert('L?i khi xóa nhân viên');
+        alert('Lỗi khi xóa nhân viên');
       }
     }
   };
@@ -91,7 +91,7 @@ function App() {
       email: '',
       phone: '',
       hireDate: '',
-      status: 'Ðang làm vi?c'
+      status: 'Đang làm việc'
     });
   };
 
@@ -99,17 +99,17 @@ function App() {
     <div className="container py-4">
       <header className="pb-3 mb-4 border-bottom d-flex justify-content-between align-items-center">
         <div>
-          <h2 className="text-primary fw-bold">H? TH?NG QU?N LÝ NHÂN S? (HRM)</h2>
+          <h2 className="text-primary fw-bold">HỆ THỐNG QUẢN LÝ NHÂN SỰ (HRM)</h2>
           <p className="text-muted mb-0">Sinh viên: <strong>Nguyễn Quốc Vương</strong> | MSSV: <strong>238009</strong></p>
         </div>
       </header>
 
       <div className="row g-4">
-        {/* FORM THÊM / Sửa */}
+        {/* FORM THÊM / SỬA */}
         <div className="col-lg-4">
           <div className="card shadow-sm">
             <div className="card-header bg-primary text-white fw-bold">
-              {editingId ? 'C?P NH?T NHÂN VIÊN' : 'THÊM NHÂN VIÊN M?I'}
+              {editingId ? 'CẬP NHẬT NHÂN VIÊN' : 'THÊM NHÂN VIÊN MỚI'}
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
@@ -118,7 +118,7 @@ function App() {
                   <input type="text" className="form-control" name="employeeId" value={formData.employeeId} onChange={handleChange} required disabled={!!editingId} />
                 </div>
                 <div className="mb-2">
-                  <label className="form-label">H? và Tên *</label>
+                  <label className="form-label">Họ và Tên *</label>
                   <input type="text" className="form-control" name="fullName" value={formData.fullName} onChange={handleChange} required />
                 </div>
                 <div className="row mb-2">
@@ -126,7 +126,7 @@ function App() {
                     <label className="form-label">Giới tính</label>
                     <select className="form-select" name="gender" value={formData.gender} onChange={handleChange}>
                       <option value="Nam">Nam</option>
-                      <option value="N?">N?</option>
+                      <option value="Nữ">Nữ</option>
                     </select>
                   </div>
                   <div className="col">
@@ -147,20 +147,20 @@ function App() {
                   <input type="text" className="form-control" name="phone" value={formData.phone} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Tr?ng thái</label>
+                  <label className="form-label">Trạng thái</label>
                   <select className="form-select" name="status" value={formData.status} onChange={handleChange}>
-                    <option value="Ðang làm vi?c">Ðang làm vi?c</option>
-                    <option value="Ngh? phép">Ngh? phép</option>
-                    <option value="Ðã ngh? vi?c">Ðã ngh? vi?c</option>
+                    <option value="Đang làm việc">Đang làm việc</option>
+                    <option value="Nghỉ phép">Nghỉ phép</option>
+                    <option value="Đã nghỉ việc">Đã nghỉ việc</option>
                   </select>
                 </div>
                 <div className="d-flex gap-2">
                   <button type="submit" className="btn btn-primary flex-grow-1">
-                    {editingId ? 'C?p Nh?t' : 'Thêm M?i'}
+                    {editingId ? 'Cập Nhật' : 'Thêm Mới'}
                   </button>
                   {editingId && (
                     <button type="button" className="btn btn-secondary" onClick={resetForm}>
-                      H?y
+                      Hủy
                     </button>
                   )}
                 </div>
@@ -169,7 +169,7 @@ function App() {
           </div>
         </div>
 
-        {/* DANH SÁCH & TÌM KI?M */}
+        {/* DANH SÁCH & TÌM KIẾM */}
         <div className="col-lg-8">
           <div className="card shadow-sm mb-3">
             <div className="card-body">
@@ -177,11 +177,11 @@ function App() {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Tìm ki?m theo Mã NV ho?c H? tên..."
+                  placeholder="Tìm kiếm theo Mã NV hoặc Họ tên..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
-                <button type="submit" className="btn btn-outline-primary">Tìm ki?m</button>
+                <button type="submit" className="btn btn-outline-primary">Tìm kiếm</button>
                 <button type="button" className="btn btn-outline-secondary" onClick={() => { setSearch(''); fetchEmployees(''); }}>Tải lại</button>
               </form>
             </div>
@@ -194,19 +194,19 @@ function App() {
                 <thead className="table-light">
                   <tr>
                     <th>Mã NV</th>
-                    <th>H? Tên</th>
+                    <th>Họ Tên</th>
                     <th>Phòng Ban</th>
                     <th>Chức vụ</th>
                     <th>Email</th>
-                    <th>Tr?ng Thái</th>
+                    <th>Trạng thái</th>
                     <th>Thao Tác</th>
                   </tr>
                 </thead>
                 <tbody>
                   {loading ? (
-                    <tr><td colSpan="7" className="text-center py-3">Ðang t?i...</td></tr>
+                    <tr><td colSpan="7" className="text-center py-3">Đang tải...</td></tr>
                   ) : employees.length === 0 ? (
-                    <tr><td colSpan="7" className="text-center py-3 text-muted">Không tìm th?y d? li?u nhân viên</td></tr>
+                    <tr><td colSpan="7" className="text-center py-3 text-muted">Không tìm thấy dữ liệu nhân viên</td></tr>
                   ) : (
                     employees.map((emp) => (
                       <tr key={emp._id}>
@@ -216,7 +216,7 @@ function App() {
                         <td>{emp.position}</td>
                         <td>{emp.email}</td>
                         <td>
-                          <span className={`badge ${emp.status === 'Ðang làm vi?c' ? 'bg-success' : emp.status === 'Ngh? phép' ? 'bg-warning text-dark' : 'bg-danger'}`}>
+                          <span className={`badge ${emp.status === 'Đang làm việc' ? 'bg-success' : emp.status === 'Nghỉ phép' ? 'bg-warning text-dark' : 'bg-danger'}`}>
                             {emp.status}
                           </span>
                         </td>
