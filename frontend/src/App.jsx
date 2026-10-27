@@ -13,11 +13,11 @@ function App() {
     gender: 'Nam',
     dateOfBirth: '',
     department: 'CNTT',
-    position: 'Nh‚n viÍn',
+    position: 'Nh√¢n vi√™n',
     email: '',
     phone: '',
     hireDate: '',
-    status: '–ang l‡m vi?c'
+    status: '√êang l√†m vi?c'
   });
   const [editingId, setEditingId] = useState(null);
 
@@ -27,7 +27,7 @@ function App() {
       const res = await axios.get(`${API_BASE_URL}?search=${keyword}`);
       setEmployees(res.data);
     } catch (err) {
-      console.error('L?i l?y danh s·ch nh‚n viÍn:', err);
+      console.error('L?i l?y danh s√°ch nh√¢n vi√™n:', err);
     } finally {
       setLoading(false);
     }
@@ -51,15 +51,15 @@ function App() {
     try {
       if (editingId) {
         await axios.put(`${API_BASE_URL}/${editingId}`, formData);
-        alert('C?p nh?t th‡nh cÙng!');
+        alert('C?p nh?t th√†nh c√¥ng!');
       } else {
         await axios.post(API_BASE_URL, formData);
-        alert('ThÍm m?i th‡nh cÙng!');
+        alert('Th√™m m?i th√†nh c√¥ng!');
       }
       resetForm();
       fetchEmployees(search);
     } catch (err) {
-      alert(err.response?.data?.message || 'CÛ l?i x?y ra');
+      alert(err.response?.data?.message || 'C√≥ l?i x?y ra');
     }
   };
 
@@ -69,12 +69,12 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    if (window.confirm('B?n cÛ ch?c ch?n mu?n xÛa nh‚n viÍn n‡y?')) {
+    if (window.confirm('B?n c√≥ ch?c ch?n mu?n x√≥a nh√¢n vi√™n n√†y?')) {
       try {
         await axios.delete(`${API_BASE_URL}/${id}`);
         fetchEmployees(search);
       } catch (err) {
-        alert('L?i khi xÛa nh‚n viÍn');
+        alert('L?i khi x√≥a nh√¢n vi√™n');
       }
     }
   };
@@ -87,11 +87,11 @@ function App() {
       gender: 'Nam',
       dateOfBirth: '',
       department: 'CNTT',
-      position: 'Nh‚n viÍn',
+      position: 'Nh√¢n vi√™n',
       email: '',
       phone: '',
       hireDate: '',
-      status: '–ang l‡m vi?c'
+      status: '√êang l√†m vi?c'
     });
   };
 
@@ -99,38 +99,38 @@ function App() {
     <div className="container py-4">
       <header className="pb-3 mb-4 border-bottom d-flex justify-content-between align-items-center">
         <div>
-          <h2 className="text-primary fw-bold">H? TH?NG QU?N L› NH¬N S? (HRM)</h2>
-          <p className="text-muted mb-0">Sinh viÍn: <strong>Nguy?n Qu?c Vuong</strong> | MSSV: <strong>238009</strong></p>
+          <h2 className="text-primary fw-bold">H? TH?NG QU?N L√ù NH√ÇN S? (HRM)</h2>
+          <p className="text-muted mb-0">Sinh vi√™n: <strong>Nguy?n Qu?c Vuong</strong> | MSSV: <strong>238009</strong></p>
         </div>
       </header>
 
       <div className="row g-4">
-        {/* FORM TH M / S?A */}
+        {/* FORM TH√äM / S?A */}
         <div className="col-lg-4">
           <div className="card shadow-sm">
             <div className="card-header bg-primary text-white fw-bold">
-              {editingId ? 'C?P NH?T NH¬N VI N' : 'TH M NH¬N VI N M?I'}
+              {editingId ? 'C?P NH?T NH√ÇN VI√äN' : 'TH√äM NH√ÇN VI√äN M?I'}
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
                 <div className="mb-2">
-                  <label className="form-label">M„ Nh‚n ViÍn *</label>
+                  <label className="form-label">M√£ Nh√¢n Vi√™n *</label>
                   <input type="text" className="form-control" name="employeeId" value={formData.employeeId} onChange={handleChange} required disabled={!!editingId} />
                 </div>
                 <div className="mb-2">
-                  <label className="form-label">H? v‡ TÍn *</label>
+                  <label className="form-label">H? v√† T√™n *</label>
                   <input type="text" className="form-control" name="fullName" value={formData.fullName} onChange={handleChange} required />
                 </div>
                 <div className="row mb-2">
                   <div className="col">
-                    <label className="form-label">Gi?i tÌnh</label>
+                    <label className="form-label">Gi?i t√≠nh</label>
                     <select className="form-select" name="gender" value={formData.gender} onChange={handleChange}>
                       <option value="Nam">Nam</option>
                       <option value="N?">N?</option>
                     </select>
                   </div>
                   <div className="col">
-                    <label className="form-label">PhÚng ban</label>
+                    <label className="form-label">Ph√≤ng ban</label>
                     <input type="text" className="form-control" name="department" value={formData.department} onChange={handleChange} required />
                   </div>
                 </div>
@@ -147,16 +147,16 @@ function App() {
                   <input type="text" className="form-control" name="phone" value={formData.phone} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Tr?ng th·i</label>
+                  <label className="form-label">Tr?ng th√°i</label>
                   <select className="form-select" name="status" value={formData.status} onChange={handleChange}>
-                    <option value="–ang l‡m vi?c">–ang l‡m vi?c</option>
-                    <option value="Ngh? phÈp">Ngh? phÈp</option>
-                    <option value="–„ ngh? vi?c">–„ ngh? vi?c</option>
+                    <option value="√êang l√†m vi?c">√êang l√†m vi?c</option>
+                    <option value="Ngh? ph√©p">Ngh? ph√©p</option>
+                    <option value="√ê√£ ngh? vi?c">√ê√£ ngh? vi?c</option>
                   </select>
                 </div>
                 <div className="d-flex gap-2">
                   <button type="submit" className="btn btn-primary flex-grow-1">
-                    {editingId ? 'C?p Nh?t' : 'ThÍm M?i'}
+                    {editingId ? 'C?p Nh?t' : 'Th√™m M?i'}
                   </button>
                   {editingId && (
                     <button type="button" className="btn btn-secondary" onClick={resetForm}>
@@ -169,7 +169,7 @@ function App() {
           </div>
         </div>
 
-        {/* DANH S¡CH & TÃM KI?M */}
+        {/* DANH S√ÅCH & T√åM KI?M */}
         <div className="col-lg-8">
           <div className="card shadow-sm mb-3">
             <div className="card-body">
@@ -177,36 +177,36 @@ function App() {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="TÏm ki?m theo M„ NV ho?c H? tÍn..."
+                  placeholder="T√¨m ki?m theo M√£ NV ho?c H? t√™n..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                 />
-                <button type="submit" className="btn btn-outline-primary">TÏm ki?m</button>
+                <button type="submit" className="btn btn-outline-primary">T√¨m ki?m</button>
                 <button type="button" className="btn btn-outline-secondary" onClick={() => { setSearch(''); fetchEmployees(''); }}>T?i l?i</button>
               </form>
             </div>
           </div>
 
           <div className="card shadow-sm">
-            <div className="card-header bg-dark text-white fw-bold">DANH S¡CH NH¬N VI N</div>
+            <div className="card-header bg-dark text-white fw-bold">DANH S√ÅCH NH√ÇN VI√äN</div>
             <div className="table-responsive">
               <table className="table table-hover table-striped align-middle mb-0">
                 <thead className="table-light">
                   <tr>
-                    <th>M„ NV</th>
-                    <th>H? TÍn</th>
-                    <th>PhÚng Ban</th>
+                    <th>M√£ NV</th>
+                    <th>H? T√™n</th>
+                    <th>Ph√≤ng Ban</th>
                     <th>Ch?c V?</th>
                     <th>Email</th>
-                    <th>Tr?ng Th·i</th>
-                    <th>Thao T·c</th>
+                    <th>Tr?ng Th√°i</th>
+                    <th>Thao T√°c</th>
                   </tr>
                 </thead>
                 <tbody>
                   {loading ? (
-                    <tr><td colSpan="7" className="text-center py-3">–ang t?i...</td></tr>
+                    <tr><td colSpan="7" className="text-center py-3">√êang t?i...</td></tr>
                   ) : employees.length === 0 ? (
-                    <tr><td colSpan="7" className="text-center py-3 text-muted">KhÙng tÏm th?y d? li?u nh‚n viÍn</td></tr>
+                    <tr><td colSpan="7" className="text-center py-3 text-muted">Kh√¥ng t√¨m th?y d? li?u nh√¢n vi√™n</td></tr>
                   ) : (
                     employees.map((emp) => (
                       <tr key={emp._id}>
@@ -216,13 +216,13 @@ function App() {
                         <td>{emp.position}</td>
                         <td>{emp.email}</td>
                         <td>
-                          <span className={`badge ${emp.status === '–ang l‡m vi?c' ? 'bg-success' : emp.status === 'Ngh? phÈp' ? 'bg-warning text-dark' : 'bg-danger'}`}>
+                          <span className={`badge ${emp.status === '√êang l√†m vi?c' ? 'bg-success' : emp.status === 'Ngh? ph√©p' ? 'bg-warning text-dark' : 'bg-danger'}`}>
                             {emp.status}
                           </span>
                         </td>
                         <td>
                           <button className="btn btn-sm btn-outline-warning me-1" onClick={() => handleEdit(emp)}>S?a</button>
-                          <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(emp._id)}>XÛa</button>
+                          <button className="btn btn-sm btn-outline-danger" onClick={() => handleDelete(emp._id)}>X√≥a</button>
                         </td>
                       </tr>
                     ))
