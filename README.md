@@ -1,13 +1,11 @@
-# HỆ THỐNG QUẢN LÝ NHÂN SỰ TẬP TRUNG (HRM)
+# �? �N QU?N L� NH�N S? (HRM)
+- Sinh vi�n: Nguy?n Qu?c Vuong
+- MSSV: 238009
 
-- **Họ và tên:** Nguyen Quoc Vuong
-- **MSSV:** 238009
-- **Lớp:** Ðiện toán dám mây
-
-## Ðường link tài nguyên bài thi
-- **GitHub Repository:** https://github.com/238009-NguyenQuocVuong/238009_NguyenQuocVuong
-- **Docker Hub Backend:** https://hub.docker.com/r/238009nguyenquocvuong/backend
-- **Docker Hub Frontend:** https://hub.docker.com/r/238009nguyenquocvuong/frontend
-- **Render App:** https://web-238009.onrender.com
-- **Render API:** https://api-238009.onrender.com
-- **MongoDB Atlas:** https://cloud.mongodb.com
+## B?NG TH�NG TIN N?P B�I
+1. Link GitHub: https://github.com/238009-NguyenQuocVuong/238009_NguyenQuocVuong
+2. Link Docker Backend: https://hub.docker.com/r/238009nguyenquocvuong/backend
+3. Link Docker Frontend: https://hub.docker.com/r/238009nguyenquocvuong/frontend
+4. Link Render App (Frontend): https://web-238009.onrender.com
+5. Link Render API (Backend): https://api-238009.onrender.com/api/employees
+6. Link Data MongoDB Atlas: https://cloud.mongodb.com
